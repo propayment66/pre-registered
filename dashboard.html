@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPayment Launch Announcement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 60px 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: #4CAF50;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: #ff9800;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #1e88e5;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .countdown div {
+            background: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            width: 120px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .countdown div:hover {
+            background: #45a049;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #1e88e5;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin: 20px 0;
+        }
+        .btn:hover {
+            background: #1565c0;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .company-name {
+            font-weight: bold;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .countdown div {
+                font-size: 1.2rem;
+                width: 90px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 ProPayment is Launching Soon!</h1>
+    <h2>Mark Your Calendar: <span class="highlight">7th April 2025</span></h2>
+    <p>We are excited to announce that <strong>ProPayment</strong> will officially launch on <span class="highlight">7th April 2025</span>, in collaboration with <strong>Jain University</strong>. This partnership will strengthen our platform's growth and innovation in the fintech sector. 🌟</p>
+
+    <div class="countdown" id="countdown">
+        <div>
+            <span id="days">00</span><br>Days
+        </div>
+        <div>
+            <span id="hours">00</span><br>Hours
+        </div>
+        <div>
+            <span id="minutes">00</span><br>Minutes
+        </div>
+        <div>
+            <span id="seconds">00</span><br>Seconds
+        </div>
+    </div>
+
+    <a href="learn.html" class="btn">Learn More</a>
+
+    <div class="footer">
+        <p>📧 Contact us: <a href="mailto:support@propayment.com">support@propayment.com</a></p>
+        <p class="company-name">© 2025 ProPayment Technology Pvt. Ltd. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    // Countdown Timer
+    const launchDate = new Date('April 7, 2025 00:00:00').getTime();
+
+    const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById("countdown").innerHTML = "<h2>🎉 ProPayment is Live!</h2>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+    }, 1000);
+</script>
+
+</body>
+</html>
